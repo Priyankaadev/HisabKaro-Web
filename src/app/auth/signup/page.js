@@ -1,7 +1,10 @@
+'use client'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { LiaLanguageSolid } from "react-icons/lia";
 
 function Signup() {
+  const router = useRouter()
   return (
     <div className=' w-full h-[100vh] relative overflow-hidden'>
             <img
@@ -48,7 +51,9 @@ function Signup() {
                         <button className='signup-button text-center p-2  rounded-lg bg-[#1FD661] '>
                             Sign Up
                         </button>
-                        <button className='login-button border-2 p-2 rounded-lg  border-[#5699D5] bg-[#F3F9FF] text-[#61A9EA] '>
+                        <button 
+                        onClick={()=>router.push('/auth/login')}
+                        className='login-button border-2 p-2 rounded-lg  border-[#5699D5] bg-[#F3F9FF] text-[#61A9EA] '>
                             Login
                         </button>
                         <button className='login-number-button border-2 rounded-lg  p-3 border-[#5699D5] bg-[#F3F9FF] text-[#61A9EA]'>
