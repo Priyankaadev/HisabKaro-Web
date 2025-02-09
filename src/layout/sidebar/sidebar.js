@@ -1,159 +1,134 @@
 "use client";
+
 import React from "react";
 import { FaAngleDown } from "react-icons/fa";
-import { AiFillPieChart } from "react-icons/ai";
-import { VscGraph } from "react-icons/vsc";
+import { AiFillPieChart } from "react-icons/ai"; 
+import { IoStatsChartOutline   } from "react-icons/io5";
 import { IoBagCheckOutline } from "react-icons/io5";
 import { GiShoppingCart } from "react-icons/gi";
 import { GoStar } from "react-icons/go";
-
 import { Button } from "@/components/ui/button";
+import { RiShoppingBag4Line } from "react-icons/ri";
+import { IoWalletOutline } from "react-icons/io5";
+import { BsReceipt } from "react-icons/bs";
+import { BsReceiptCutoff } from "react-icons/bs";
+import { PiMoneyWavyBold } from "react-icons/pi";
+import { TbBasketMinus } from "react-icons/tb";
+import { BsGraphUpArrow } from "react-icons/bs";
+import { AiOutlineFileDone } from "react-icons/ai";
+import { MdOutlineInventory2 } from "react-icons/md";
+
+
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 function Sidebar() {
   return (
-    <div className="w-[19%] mt-3 h-full flex flex-col px-[4%] ">
-      <div className="admin-name flex self-center ">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex gap-3   bg-[#edf9f2] border-none"
-            >
-              {" "}
-              Store-name{" "}
-              <span className="p-1 bg-[#d4f4e1] rounded-full ">
-                <FaAngleDown />
-              </span>
-            </Button>
-          </DropdownMenuTrigger>
-          {/* <DropdownMenuContent className="w-56" disabled> */}
-
-          {/* <DropdownMenuRadioGroup > */}
-          {/* <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem> */}
-
-          {/* </DropdownMenuRadioGroup> */}
-          {/* </DropdownMenuContent> */}
-        </DropdownMenu>
+    <div className="w-[22%] mt-3 h-full flex flex-col px-[4%]">
+      {/* Store Name */}
+      <div className="admin-name flex self-center">
+        <Button
+          variant="outline"
+          className="flex gap-3 bg-[#edf9f2] border-none"
+        >
+          Store-name
+          <span className="p-1 bg-[#d4f4e1] rounded-full">
+            <FaAngleDown />
+          </span>
+        </Button>
       </div>
 
-      <div className="head-options-detailed text-[#7B7B7B]  mt-5">
-        <p className=" ">Home</p>
+    
+      <div className="head-options-detailed text-[#7B7B7B] mt-5">
+        <p>Home</p>
       </div>
-      <div className="head-items flex flex-col mt-3 gap-4 h-full">
-        {/* <div className="head-item text-[15px] flex items-center justify-between ">
-       <span className="flex items-center gap-1"><AiFillPieChart size={16}/>  Dashboard </span> 
-        <span className=""><GoStar /></span>
-        </div> */}
-        <DropdownMenu >
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="none"
-              className="flex font-normal text-[15px] justify-between shadow-none border-none p-0"
-            >
-              <span className="flex gap-1 items-center">
-                {" "}
-                <AiFillPieChart />
-                Dashboard
-              </span>
 
-              <GoStar />
-            </Button>
-          </DropdownMenuTrigger>
-        </DropdownMenu>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="none"
-              className="flex font-normal text-[15px] justify-between shadow-none border-none p-0"
-            >
-              <span className="flex gap-1 items-center">
-             
-                <VscGraph />
-                Finance
-              </span>
+      {/* Accordion Menu */}
+      <Accordion type="single" collapsible className="mt-3 ">
 
-              <FaAngleDown />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-40 border-none shadow-none  ">
-            <div className="px-5">
-              <div>Top</div>
-              <div>Top</div>
-            </div>
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="none"
-              className="flex font-normal text-[15px] justify-between shadow-none border-none p-0"
-            >
-              <span className="flex gap-1 items-center">
-            
-                <IoBagCheckOutline />
-                HRMS
-              </span>
+        <AccordionItem value="dashboard" className='flex justify-between items-center border-none mb-4'>
+          {/* <AccordionTrigger className="flex justify-between text-[15px] font-normal"> */}
+            <span className="flex gap-2 text-[15px] items-center">
+              <AiFillPieChart /> Dashboard
+            </span>
+            <GoStar />
+          {/* </AccordionTrigger> */}
+        </AccordionItem>
 
-              <FaAngleDown />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-40 border-none shadow-none  ">
-            <div className="px-5">
-              <div>Top</div>
-              <div>Top</div>
-            </div>
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="none"
-              className="flex font-normal text-[15px] justify-between shadow-none border-none p-0"
-            >
-              <span className="flex gap-1 items-center">
-                {" "}
-                <GiShoppingCart />
-                Inventory
-              </span>
+        {/* Finance */}
+        <AccordionItem value="finance  " className='border-none'>
+          <AccordionTrigger className="flex justify-between text-[15px]  font-normal">
+            <span className="flex gap-2 items-center">
+              <IoStatsChartOutline /> Finance
+            </span>
+          </AccordionTrigger>
+          <AccordionContent className="px-5 space-y-4">
+            <p className="flex gap-2 items-center"><IoWalletOutline />Ledger</p>
+            <p className="flex gap-2 items-center"><BsReceiptCutoff />Invoice</p>
+            <p className="flex gap-2 items-center"><BsReceipt />Sale Register</p>
+            <p className="flex gap-2 items-center"><PiMoneyWavyBold />Profit-Loss</p>
+            <p className="flex gap-2 items-center"><TbBasketMinus />Udhari</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow />Bank Analysis</p>
+          </AccordionContent>
+        </AccordionItem>
 
-              <FaAngleDown />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-40 border-none shadow-none  ">
-            <div className="px-5">
-              <div>Top</div>
-              <div>Top</div>
-            </div>
-          </DropdownMenuContent>
-        </DropdownMenu>
-         <div className="flex gap-1 items-center text-[15px]">  <IoBagCheckOutline />Sales</div>
-         <div className="flex gap-1 items-center text-[15px]">  <IoBagCheckOutline />Marketing</div>
+        {/* HRMS */}
+        <AccordionItem value="hrms " className='border-none'>
+          <AccordionTrigger className="flex justify-between text-[15px] font-normal">
+            <span className="flex gap-2 items-center">
+              <IoBagCheckOutline /> HRMS
+            </span>
+          </AccordionTrigger>
+          <AccordionContent className="px-5 space-y-4">
+            <p className="flex gap-2 items-center"><IoWalletOutline />Salary</p>
+            <p className="flex gap-2 items-center"><BsReceiptCutoff />Salary Advance</p>
+            <p className="flex gap-2 items-center"><BsReceipt />Overtime</p>
+            <p className="flex gap-2 items-center"><PiMoneyWavyBold />Allowance/Bonus</p>
+            <p className="flex gap-2 items-center"><TbBasketMinus />Deduction</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow />Employee Ledger</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow />Schedule</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow />Request</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow />Hiring</p>
+          </AccordionContent>
+        </AccordionItem>
+
+        {/* Inventory */}
+        <AccordionItem value="inventory" className='border-none'>
+          <AccordionTrigger className="flex justify-between text-[15px] font-normal "> 
+            <span className="flex gap-2 items-center">
+              <GiShoppingCart  /> Inventory
+            </span>
+          </AccordionTrigger>
+          <AccordionContent className="px-5 space-y-4">
+            <p className="flex gap-2 items-center"><AiOutlineFileDone />Inventory</p>
+            <p className="flex gap-2 items-center"><MdOutlineInventory2 />Purchase Register</p>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+
+      {/* Other Static Menu Items */}
+      <div className="flex flex-col mt-4 gap-6 text-[15px]">
+        <div className="flex gap-2 items-center">
+          <RiShoppingBag4Line /> Sales
+        </div>
+        <div className="flex gap-2 items-center">
+          <RiShoppingBag4Line /> Marketing
+        </div>
       </div>
-      <div className="head-options mt-5">
-        <p className=" font-semibold">
-          Business
-        </p>
+
+      {/* Business Section */}
+      <div className="head-options mt-5 ">
+        <p className="font-semibold">Business</p>
       </div>
-    <ul className="flex flex-col text-[#7B7B7B] gap-4 mt-2 mb-10 ">
-      <li>
-        Assign Roles
-      </li>
-      <li>
-        Business Profile
-      </li>
-      <li>
-        Business Partner
-      </li>
-    </ul>
+      <ol  className="flex flex-col list-disc text-[#7B7B7B] gap-5 mt-4 mb-10 ">
+        <li>Assign Roles</li>
+        <li>Business Profile</li>
+        <li>Business Partner</li>
+      </ol>
     </div>
   );
 }
