@@ -26,9 +26,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+
 function Sidebar() {
+  
   return (
-    <div className="w-[22%] mt-3 h-full flex flex-col px-[4%]">
+
+   <div className="w-[22%] mt-3 h-full flex flex-col px-[4%]">
       {/* Store Name */}
       <div className="admin-name flex self-center">
         <Button

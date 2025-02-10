@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import React from 'react'
 import { AiFillPieChart } from "react-icons/ai";
@@ -9,7 +10,10 @@ import { SlCalender } from "react-icons/sl";
 import { BiBell } from "react-icons/bi";
 
 
+
 function Header() {
+
+  
   return (
     <div className='w-full  flex justify-between px-[3%] py-2'>
               
