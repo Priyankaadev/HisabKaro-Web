@@ -45,7 +45,7 @@ function SalesGraph() {
         ]
     })
   return (
-   <div className='graph rounded-md  shadow-xl border w-[100%] '>
+   <div className='graph rounded-lg  shadow-xl border w-[100%] '>
     <div className='row'>
         <div className='mixed-chart'>
             <Chart options={chartData.options} series={chartData.series} type="bar" width="500" />

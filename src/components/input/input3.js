@@ -2,7 +2,7 @@ import React from 'react'
 
 function Input3({ get, give}) {
   return (
-    <div className='shadow-lg border rounded-md p-3 w-[50%]'>
+    <div className='shadow-lg border rounded-lg p-3 w-[50%]'>
         <div className='flex justify-between'>
             <p className='font-semibold'>Due</p>
             <button className='py-1 px-2 rounded-lg text-white bg-green-500 '>View</button>

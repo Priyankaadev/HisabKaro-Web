@@ -31,7 +31,7 @@ function Sidebar() {
   
   return (
 
-   <div className="w-[22%] mt-3 h-full flex flex-col px-[4%]">
+   <div className="w-[20%] mt-3 h-full flex flex-col px-[3%]">
       {/* Store Name */}
       <div className="admin-name flex self-center">
         <Button

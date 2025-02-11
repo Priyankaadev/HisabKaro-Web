@@ -6,32 +6,32 @@ function Profile1({ img, name, attendance, time }) {
   return (
     <div className="w-full flex justify-between items-center ">
       <div className="flex gap-2 items-center ">
-        <div className="w-30 h-30 rounded-full ">
-          <Image src={img} alt="Profile Image"  />
+        <div className="w-10 h-10 rounded-full   ">
+          <img src='/auth/star-image.png' alt="Profile Image"  className="rounded-full w-[100%] h-[100%]" />
         </div>
-        <p>{name}</p>
+        <p className="text-[13px]">Pratap Singh Chauhan</p>
         <div>
           {attendance && attendance === "Present" ? (
-            <div className="flex gap-2 rounded-lg bg-green-200 border-[2px] border-[#2acd2a] ">
-              {attendance}
-              <div className="h-2 w-2 bg-green-600 rounded-full"></div>
-              <p>{time}</p>
+            <div className="flex gap-2 p-1 rounded-lg bg-green-100 border border-[#2acd2a] text-[#2acd2a] ">
+              Present
+              <div className="h-2 w-2 bg-red-600 rounded-full"></div>
+              <p>9:30 AM</p>
             </div>
           ) : (
-            <div className="flex gap-2 rounded-lg bg-green-200 border-[2px] border-[#2acd2a] ">
-              {attendance}
-              <div className="h-2 w-2 bg-red-600 rounded-full"> </div>
-              <p>{time}</p>
+            <div className="flex items-center px-1 gap-2 rounded-lg bg-green-100 border-[2px] text-[#2acd2a]  text-[13px] px-[1.5]  py-[0.5] border-[#2acd2a] ">
+         Present
+              <div className="h-2 w-2 bg-green-600 rounded-full"> </div>
+              <p>9:30 AM</p>
             </div>
           )}
         </div>
         <GoStar />
       </div>
-      <div className="flex gap-4">
-        <button className="bg-blue-500 rounded-lg px-4 py-1 ">
+      <div className="flex gap-2">
+        <button className="bg-blue-400 rounded-lg px-2 py-1 text-white text-[13px] ">
             View
         </button>
-        <Image src="/attendance/Call.png" width={30} height={30} alt="Whatsapp Icon"/>
+        <Image src="/attendance/Call.png" width={30} height={20} alt="Whatsapp Icon"/>
       </div>
     </div>
   );

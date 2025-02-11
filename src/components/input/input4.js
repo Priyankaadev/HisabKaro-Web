@@ -3,7 +3,7 @@ import { SlCalender } from "react-icons/sl";
 
 function Input4({value, day, month, year}) {
   return (
-    <div className='shadow-lg rounded-md border p-3 w-[50%]'>
+    <div className='shadow-lg rounded-lg border p-3 w-[50%]'>
         <div className='flex justify-between'>
             <p className='font-semibold'>Invoice Value</p>
             <button className='py-1 px-2 rounded-lg text-white bg-green-500'>View</button>

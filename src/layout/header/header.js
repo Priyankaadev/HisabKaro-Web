@@ -15,7 +15,7 @@ function Header() {
 
   
   return (
-    <div className='w-full  flex justify-between px-[3%] py-2'>
+    <div className='w-full  flex justify-between px-[2.5%] py-2'>
               
     <div className='head-left flex justify-between gap-20 '>
             <div className='flex items-center gap-2'>
