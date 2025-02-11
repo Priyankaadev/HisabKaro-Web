@@ -10,8 +10,11 @@ import Input3 from "@/components/input/input3";
 import Input4 from "@/components/input/input4";
 import Input5 from "@/components/input/input5";
 import Profile1 from "@/components/profile/profile1";
+import { useRouter } from "next/navigation";
 
 function Dashboard() {
+
+  const router = useRouter()
   return (
     <>
       <Highlight />
@@ -44,11 +47,11 @@ function Dashboard() {
           <Input5 />
         </div>
 
-        <div className="rounded-lg border shadow-xl w-[50%] p-5 flex flex-col h-100vh">
+        <div className="rounded-lg border shadow-xl w-[50%] p-3 flex flex-col h-100vh">
           {/* right side attendance */}
           <div className="flex justify-between items-center font-semibold ">
             <p>Attendance</p>
-            <p className="text-green-500">View All</p>
+            <p className="text-green-500 cursor-pointer" onClick={()=>router.push('/dashboard/staff')}>View All</p>
           </div>
           <div className="flex gap-2 items-center mt-3">
             <Input1

@@ -1,11 +1,8 @@
-'use client'
+import React from 'react'
 
-import Dashboard from "./dashboard/page";
-
-export default function Home() {
+function RouteHighlight() {
   return (
-    <div className="w-full   ">
-      {/* <div className="flex justify-between mt-5 mb-5 items-center">
+    <div className="flex justify-between mt-5 mb-5 items-center mx-3">
         <p className="font-bold text-[20px] text-[#4F4F4F]">Dashboard</p>
         <div className="flex gap-2 text-[15px]">
           <button className="px-8 py-2 bg-[#6AB7FD] text-white rounded-md shadow-xl">
@@ -18,9 +15,8 @@ export default function Home() {
             &#8377;OUT
           </button>
         </div>
-      </div> */}
-      <Dashboard />
-
-    </div>
-  );
+      </div>
+  )
 }
+
+export default RouteHighlight
