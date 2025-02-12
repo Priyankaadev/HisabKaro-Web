@@ -1,12 +1,16 @@
+'use client'
+
 import { Dropdown } from "@/components/cart/dropdown";
 import Options from "@/components/input/options";
 import ProductDiv from "@/components/products/productDiv";
 import ProfileIndicator from "@/components/profile/profileIndicator";
-import React from "react";
+import React, { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 
 function Products() {
+
+  const [checkoutOpen, setCheckoutOpen] = useState(false)
   return (
     <div className="rounded-lg relative shadow-lg border w-full py-4 px-[2%] flex flex-col gap-3">
       <div className="head flex justify-between items-center mb-2 ">
@@ -58,7 +62,11 @@ function Products() {
       <div className="checkout mt-auto w-full flex justify-end ">
         <div className="buttons flex gap-2 items-center basis-1/2  absolute bottom-2 mr-5">
             <Dropdown />
-            <button className="bg-green-500 text-white w-52 h-10 shadow-lg border basis-2/3  py-1 rounded-lg">Next</button>
+            <button 
+            onClick={()=>{
+                setCheckoutOpen(!checkoutOpen)
+            }}
+            className="bg-green-500 text-white w-52 h-10 shadow-lg border basis-2/3  py-1 rounded-lg">Next</button>
             
         </div>
        
