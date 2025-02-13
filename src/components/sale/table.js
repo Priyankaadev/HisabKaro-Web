@@ -91,7 +91,11 @@ import {
             <TableCell>&#8377;{item.Amount}</TableCell>
               <TableCell>{item.Date}</TableCell>
               <TableCell className='text-blue-400'>{item.Category}</TableCell>
-              <TableCell className='text-right' ><button className="text-white rounded-lg bg-blue-400 px-5 py-2">View</button></TableCell>
+              <TableCell className='text-right' >
+                <button
+              
+              className="text-white rounded-lg bg-blue-400 px-5 py-2">
+                View</button></TableCell>
             </TableRow>
           ))}
         </TableBody>

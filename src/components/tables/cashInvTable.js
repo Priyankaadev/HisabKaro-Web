@@ -11,6 +11,7 @@ import {
   
   const Cash = [
     {
+      head:"Amount",
       Amount: 694.69,
       Mode: "Cash",
       Date: "14/02/2024",
@@ -18,6 +19,7 @@ import {
     
     },
     {
+      
         Amount: 694.69,
         Mode: "Cash",
         Date: "14/02/2024",
@@ -55,16 +57,16 @@ import {
     },
   ]
   
-  export function TableCash() {
+  export function CashInvTable({h1,h2,h3,h4}) {
     return (
       <Table >
       
         <TableHeader >
           <TableRow className='border-none text-gray-500 ' >
-            <TableHead >Amount</TableHead>
-            <TableHead>Mode</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead >From</TableHead>
+            <TableHead >{h1}</TableHead>
+            <TableHead>{h2}</TableHead>
+            <TableHead>{h3}</TableHead>
+            <TableHead >{h4}</TableHead>
             <TableHead className='text-right' >View</TableHead>
           </TableRow>
         </TableHeader>
