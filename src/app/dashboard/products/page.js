@@ -43,7 +43,7 @@ function Products() {
           type="text"
           name="search"
           placeholder="Search Products..."
-          className="w-full p-2 bg-[#f5f8fa] rounded-xl "
+          className="w-full p-2 bg-[#f5f8fa] rounded-xl outline-none focus:ring-0 focus:border-transparent "
         />
       </div>
       <div className="search-highlights flex items-center gap-3">

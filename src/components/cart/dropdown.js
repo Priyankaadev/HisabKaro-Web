@@ -23,7 +23,7 @@ export function Dropdown() {
                type="text"
                name="search"
                placeholder="Search Products..."
-               className="w-full p-2 bg-[#f5f8fa] rounded-xl "
+               className="w-full p-2 bg-[#f5f8fa] rounded-xl outline-none focus:ring-0 focus:border-transparent "
              />
            </div>
            <DropdownMenuItem>2 Items added</DropdownMenuItem>

@@ -71,7 +71,7 @@ function Header() {
             type='text'   
             name='search'        
             placeholder='Search here...' 
-            className='py-2 px-6 bg-[#F9FAFB]  focu-no'
+            className='py-2 px-6 bg-[#F9FAFB]  outline-none focus:ring-0 focus:border-transparent'
              />
              </div>
              <div className='calender-icon'>
