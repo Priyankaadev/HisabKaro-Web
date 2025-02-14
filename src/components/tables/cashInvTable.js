@@ -7,7 +7,9 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+import { useState } from "react";
   import { GoArrowDownLeft } from "react-icons/go";
+import InventoryDetails from "../popup/inventoryDetails";
   
   const Cash = [
     {
@@ -58,8 +60,10 @@ import {
   ]
   
   export function CashInvTable({h1,h2,h3,h4}) {
+    const [openInvView, setOpenInvView]= useState(false)
     return (
-      <Table >
+   <>
+   <Table className='relative' >
       
         <TableHeader >
           <TableRow className='border-none text-gray-500 ' >
@@ -77,12 +81,30 @@ import {
               <TableCell>{cash.Mode}</TableCell>
               <TableCell>{cash.Date}</TableCell>
               <TableCell>{cash.From}</TableCell>
-              <TableCell className='text-right' ><button className="text-white rounded-lg bg-blue-400 px-5 py-2">View</button></TableCell>
+              <TableCell className='text-right' >
+                <button
+                onClick={()=>{
+                  if(openInvView){
+                    !openInvView
+                  }
+                  setOpenInvView(!openInvView)
+                }}
+                 className="text-white rounded-lg bg-blue-400 px-5 py-2">
+                  View</button></TableCell>
             </TableRow>
           ))}
         </TableBody>
+     
        
       </Table>
+
+      {/* Details popup when clicked view*/}
+      {openInvView && (
+         <InventoryDetails isOpen={setOpenInvView}/>
+                   
+            )}
+
+      </>
     )
   }
   

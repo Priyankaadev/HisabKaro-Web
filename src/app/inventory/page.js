@@ -1,6 +1,6 @@
 "use client";
 import CalendarPopup from "@/components/calendar/calendar";
-import { CashInvTable, TableCash } from "@/components/tables/cashInvTable";
+import { CashInvTable } from "@/components/tables/cashInvTable";
 import FilterPayment from "@/components/popup/filterPayment";
 import React, { useState } from "react";
 import { FaSearch, FaShareAlt } from "react-icons/fa";
@@ -9,10 +9,12 @@ import { SlCalender } from "react-icons/sl";
 import InventoryStock from "@/components/buttons/inventoryStock";
 import { Share2Icon } from "lucide-react";
 import { BiPlus } from "react-icons/bi";
+import AddManually from "@/components/popup/addManually";
 
 function Inventory() {
   const [openFilterPayment, setOpenFilterPayment] = useState(false);
   const [openCalendar, setOpenCalendar] = useState(false);
+  const [popupAddManually, setPopupAddManually] = useState(false)
   return (
     <div className="w-full flex flex-col gap-3 relative z-1">
       {/* highlights */}
@@ -94,12 +96,24 @@ function Inventory() {
             <button className=" bg-white px-4 py-1 flex rounded-lg shadow-md gap-1 items-center" >
                 <Share2Icon size={18} /> Upload
             </button>
-            <button className=" bg-white px-4 gap-1 py-1 flex rounded-lg shadow-md items-center " >
+            <button 
+            onClick={()=>{
+              if(popupAddManually){
+                !popupAddManually
+              }
+              setPopupAddManually(!popupAddManually)
+            console.log("clicked add manually");
+            
+            }} 
+            className=" bg-white px-4 gap-1 py-1 flex rounded-lg shadow-md items-center " >
                 <BiPlus size={20} /> Add Manually
             </button>
           
         </div>
     </div>
+    {
+      popupAddManually? <AddManually isOpen={setPopupAddManually}/> : null
+    }
     {/* table */}
         <div className="px-5 py-2 ">
           <CashInvTable
@@ -109,6 +123,7 @@ function Inventory() {
             h4={"MRP"}
           />
         </div>
+
       </div>
     </div>
   );
