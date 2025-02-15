@@ -29,10 +29,11 @@ function MoreDetails() {
       <button className="border border-orange-400 rounded-xl font-semibold p-2 w-[10%]">GST Input</button>
       <input 
       type="text"
-      className="border rounded-xl p-2 w-full"
+      className="border rounded-xl p-2 w-full focus:outline-none focus:ring-0"
       placeholder="GST No. of Party"
       />
       </div>
+     <input type="file" placeholder="Attach File"  className="rounded-xl border-black border w-fit  " />
     </>
   );
 }

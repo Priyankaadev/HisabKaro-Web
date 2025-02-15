@@ -16,7 +16,7 @@ export default function LayoutWrapper({ children }) {
       <div className="flex">
         {!isAuthPage && <Sidebar />}
         <div className="w-full" >
-          <RouteHighlight />
+          <RouteHighlight/>
        {children}
        </div>
       </div>

@@ -2,15 +2,11 @@
 import React from "react";
 import { SelectCategory } from "../buttons/selectDropdown";
 import { BiPlus } from "react-icons/bi";
-import { GiCancel } from "react-icons/gi";
 
-function InventoryDetails({isOpen}) {
+function InventoryDetails() {
   return (
     <div className=" bg-white rounded-2xl p-4 flex flex-col gap-4 absolute z-50 w-[50%] h-full top-0 right-0  ">
-      <div onClick={()=>isOpen(false)}
-      className="flex justify-end">
-        <GiCancel size={18} />
-      </div>
+     
       <p className="text-blue-400 font-semibold text-[22px]">Details</p>
       <div className="grid grid-cols-2 grid-flow-row gap-3">
         <div className=" flex gap-2 flex-col ">

@@ -76,8 +76,8 @@ className="border p-2 rounded-xl focus:outline-none focus:ring-0 "
     <MoreDetails /> :null }
   
       {/* buttons */}
-      { <div className="checkout mt-auto w-full flex justify-end ">
-        <div className="buttons flex gap-2 items-center basis-1/2  absolute bottom-2 mr-5">
+       <div className="checkout mt-auto w-full flex justify-end ">
+        {/* <div className="buttons flex gap-2 items-center basis-1/2  absolute bottom-2 mr-5">
             <Dropdown />
             <button 
             onClick={()=>{
@@ -85,9 +85,10 @@ className="border p-2 rounded-xl focus:outline-none focus:ring-0 "
             }}
             className="bg-green-500 text-white w-52 h-10 shadow-lg border basis-2/3  py-1 rounded-lg">Next</button>
             
-        </div>
+        </div> */}
+
        
-      </div>}
+      </div>
 
     </div>
   );

@@ -1,6 +1,5 @@
 'use client'
 
-import EndButtons from "@/components/buttons/endButtons";
 import { Dropdown } from "@/components/cart/dropdown";
 import Options from "@/components/input/options";
 import ProductDiv from "@/components/products/productDiv";
@@ -60,9 +59,8 @@ function Products() {
           <ProductDiv key={index} stock={"7 pcs"} price={"4.99"} />
         ))}
       </div>
-
-
-        {/* <div className="buttons flex gap-2 items-center basis-1/2  absolute bottom-2 mr-5">
+      <div className="checkout mt-auto w-full flex justify-end ">
+        <div className="buttons flex gap-2 items-center basis-1/2  absolute bottom-2 mr-5">
             <Dropdown />
             <button 
             onClick={()=>{
@@ -70,11 +68,11 @@ function Products() {
             }}
             className="bg-green-500 text-white w-52 h-10 shadow-lg border basis-2/3  py-1 rounded-lg">Next</button>
             
-        </div> */}
+        </div>
        
       </div>
 
-
+    </div>
   );
 }
 

@@ -7,10 +7,8 @@ import { Switch } from "@/components/ui/switch"
 
 function EmployeeDetails() {
   return (
-    <div className="rounded-md ">
-      <div className="p-2 rounded-full bg-green-100 ">
-        <RxCross1 />
-      </div>
+ <>
+      
       <p className="text-blue-500 text-[25px] font-semibold">
         Employee Details
       </p>
@@ -87,7 +85,7 @@ function EmployeeDetails() {
             Submit
         </button>
     </div>
-    </div>
+</>
   );
 }
 

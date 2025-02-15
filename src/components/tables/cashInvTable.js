@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
   import { GoArrowDownLeft } from "react-icons/go";
 import InventoryDetails from "../popup/inventoryDetails";
+import PopupLayout from "../popupLayoutWrapper/popupLayout";
   
   const Cash = [
     {
@@ -60,7 +61,7 @@ import InventoryDetails from "../popup/inventoryDetails";
   ]
   
   export function CashInvTable({h1,h2,h3,h4}) {
-    const [openInvView, setOpenInvView]= useState(false)
+    const [showPopup, setShowPopup] = useState(false);
     return (
    <>
    <Table className='relative' >
@@ -83,12 +84,7 @@ import InventoryDetails from "../popup/inventoryDetails";
               <TableCell>{cash.From}</TableCell>
               <TableCell className='text-right' >
                 <button
-                onClick={()=>{
-                  if(openInvView){
-                    !openInvView
-                  }
-                  setOpenInvView(!openInvView)
-                }}
+               onClick={() => setShowPopup(true)}
                  className="text-white rounded-lg bg-blue-400 px-5 py-2">
                   View</button></TableCell>
             </TableRow>
@@ -98,12 +94,12 @@ import InventoryDetails from "../popup/inventoryDetails";
        
       </Table>
 
-      {/* Details popup when clicked view*/}
-      {openInvView && (
-         <InventoryDetails isOpen={setOpenInvView}/>
-                   
-            )}
-
+     {/* Show Popup when "View" is clicked */}
+     {showPopup && (
+        <PopupLayout onClose={() => setShowPopup(false)}>
+          <InventoryDetails />
+        </PopupLayout>
+      )}
       </>
     )
   }

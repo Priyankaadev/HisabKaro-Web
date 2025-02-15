@@ -97,7 +97,7 @@ function ReqTable() {
                  <TableCell><button
                  className="text-white rounded-lg bg-blue-400 px-5 py-2">
                   View</button></TableCell>
-                 <TableCell className='text-right' ><AcceptReject /> </TableCell>
+                 <TableCell className='flex justify-end' ><AcceptReject /> </TableCell>
                </TableRow>
              ))}
            </TableBody>
