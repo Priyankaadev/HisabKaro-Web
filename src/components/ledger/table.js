@@ -7,6 +7,9 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+import { useState } from "react"
+import PopupLayout from "../popupLayoutWrapper/popupLayout"
+import LedgerView from "../popup/ledgerView"
 
   
   const Ledger = [
@@ -67,6 +70,7 @@ import {
   ]
   
   export function TableLedger() {
+    const [showView, setShowView] = useState(false)
     return (
       <Table >
       
@@ -82,11 +86,18 @@ import {
             <TableRow key={idx} className='border-none '>
               <TableCell  >{person.Name}</TableCell>
               <TableCell>&#8377;{person.Balance}</TableCell>
-              <TableCell className='text-right' ><button className="text-white rounded-lg bg-blue-400 px-5 py-2">View</button></TableCell>
+              <TableCell className='text-right' ><button 
+              onClick={()=>setShowView(!showView)}
+              className="text-white rounded-lg bg-blue-400 px-5 py-2">View</button></TableCell>
             </TableRow>
           ))}
         </TableBody>
-       
+       {showView && 
+       <PopupLayout >
+        <LedgerView onCancel={setShowView}/>
+        
+       </PopupLayout>
+       }
       </Table>
     )
   }

@@ -1,13 +1,13 @@
 import {   Edit2 } from 'lucide-react'
 import React from 'react'
-import { GiCancel } from 'react-icons/gi'
+import { RxCross1 } from 'react-icons/rx'
 
 
 function AddMore({assetOpen}) {
   return (
     <div className='rounded-xl bg-white p-5 w-[70%] h-[80%]  z-55 flex flex-col gap-3'>
       <div className='self-end' >
-        <GiCancel size={22} onClick={()=>assetOpen(false)} />
+        <RxCross1 size={22} onClick={()=>assetOpen(false)} />
         </div>
         <p className='text-[22px] mb-2 text-blue-400'>
             Assign Assets

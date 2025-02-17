@@ -1,16 +1,22 @@
 'use client'
+import CalendarPopup from "@/components/calendar/calendar";
 import { TableLedger } from "@/components/ledger/table";
+import InventoryDetails from "@/components/popup/inventoryDetails";
+import PopupLayout from "@/components/popupLayoutWrapper/popupLayout";
 import { Switch } from "@/components/ui/switch";
 import { Plus, Share2 } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 
 function Ledger() {
+  const [openCalendar, setOpenCalendar] = useState(false)
+  const [openCreateBtn, setOpenCreateBtn] =useState(false)
+
   return (
     <div className="w-full">
       <div className="flex justify-end items-center gap-3 mr-5">
-        <SlCalender />
+        <SlCalender onClick={()=>setOpenCalendar(!openCalendar)}/>
         <div className="bg-green-100 flex gap-2 px-4 py-2 rounded-2xl"> 
             <p>GST Input & Output</p>
             <Switch />
@@ -32,7 +38,16 @@ function Ledger() {
                           
                           />
                     </div>
-                <button className="bg-blue-400 rounded-xl flex p-2 items-center text-white "><Plus color=" white" size={20}/>Create Ledger</button>
+                <button
+                onClick={()=>setOpenCreateBtn(!openCreateBtn)}
+                 className="bg-blue-400 rounded-xl flex p-2 items-center text-white "
+                 >
+                  <Plus color=" white" size={20}/>Create Ledger</button>
+                  {openCreateBtn && 
+                  <PopupLayout>
+                    <InventoryDetails onCancel={setOpenCreateBtn}/>
+                  </PopupLayout>
+                  }
             </div>
         </div>
         {/* table */}
@@ -40,6 +55,7 @@ function Ledger() {
             <TableLedger />
         </div>
       </div>
+      {openCalendar && <CalendarPopup isOpen={setOpenCalendar} />}
     </div>
   );
 }
