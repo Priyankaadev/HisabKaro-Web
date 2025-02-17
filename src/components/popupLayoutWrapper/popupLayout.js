@@ -20,7 +20,11 @@ function PopupLayout({ children }) {
     return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
         {/* Popup Content */}
+      
+
         {children}
+  
+     
       </div>
 
   );

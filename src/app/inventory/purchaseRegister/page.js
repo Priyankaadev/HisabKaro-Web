@@ -1,5 +1,6 @@
 "use client";
 
+import CalendarPopup from "@/components/calendar/calendar";
 import { TableSale } from "@/components/sale/table";
 import { Share2 } from "lucide-react";
 import React, { useState } from "react";
@@ -29,15 +30,13 @@ const [openCalendar , setOpenCalendar] = useState(false)
           <SlCalender
             size={20}
             onClick={() => {
-              if (openCalendar) {
-                !openCalendar;
-              }
               setOpenCalendar(!openCalendar);
             }}
           />
           <Share2 size={18} />
         </div>
       </div>
+     {openCalendar && <CalendarPopup isOpen={setOpenCalendar(!openCalendar)} />}
       <div className="rounded-lg mt-5 shadow-xl border p-4 w-[98%]">
         {/* header */}
         <div className="flex justify-between items-center px-5 mb-2 ">

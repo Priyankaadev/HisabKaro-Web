@@ -10,6 +10,7 @@ import InventoryStock from "@/components/buttons/inventoryStock";
 import { Share2Icon } from "lucide-react";
 import { BiPlus } from "react-icons/bi";
 import AddManually from "@/components/popup/addManually";
+import PopupLayout from "@/components/popupLayoutWrapper/popupLayout";
 
 function Inventory() {
   const [openFilterPayment, setOpenFilterPayment] = useState(false);
@@ -93,7 +94,7 @@ function Inventory() {
             <InventoryStock  stock={"Not Sold 2 month"}/>
         </div>
         <div className="flex items-center gap-2">
-            <button className=" bg-white px-4 py-1 flex rounded-lg shadow-md gap-1 items-center" >
+            <button className=" bg-white border px-4 py-1 flex rounded-lg shadow-md gap-1 items-center" >
                 <Share2Icon size={18} /> Upload
             </button>
             <button 
@@ -105,14 +106,17 @@ function Inventory() {
             console.log("clicked add manually");
             
             }} 
-            className=" bg-white px-4 gap-1 py-1 flex rounded-lg shadow-md items-center " >
+            className=" bg-white border px-4 gap-1 py-1 flex rounded-lg shadow-md items-center " >
                 <BiPlus size={20} /> Add Manually
             </button>
           
         </div>
     </div>
     {
-      popupAddManually? <AddManually isOpen={setPopupAddManually}/> : null
+      popupAddManually && 
+      <PopupLayout>
+        <AddManually isOpen={setPopupAddManually}/>
+      </PopupLayout>
     }
     {/* table */}
         <div className="px-5 py-2 ">

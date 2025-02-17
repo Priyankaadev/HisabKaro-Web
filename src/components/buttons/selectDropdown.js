@@ -13,7 +13,7 @@ import {
 export function SelectDropdown() {
   return (
     <Select className='rounded-2xl w-full '>
-      <SelectTrigger className="w-auto">
+      <SelectTrigger className="w-full">
         <SelectValue placeholder="Select Category" />
       </SelectTrigger>
       <SelectContent>

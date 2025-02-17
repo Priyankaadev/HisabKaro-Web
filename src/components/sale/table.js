@@ -7,6 +7,9 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+import { useState } from "react"
+import PopupLayout from "../popupLayoutWrapper/popupLayout"
+import InventoryDetails from "../popup/inventoryDetails"
 
   
   const Sold = [
@@ -70,6 +73,7 @@ import {
   ]
   
   export function TableSale() {
+    const [showPurchase, setShowPurchase] = useState(false)
     return (
       <Table >
       
@@ -93,12 +97,17 @@ import {
               <TableCell className='text-blue-400'>{item.Category}</TableCell>
               <TableCell className='text-right' >
                 <button
-              
+              onClick={()=>setShowPurchase(!showPurchase)}
               className="text-white rounded-lg bg-blue-400 px-5 py-2">
                 View</button></TableCell>
             </TableRow>
           ))}
         </TableBody>
+        {showPurchase && 
+        <PopupLayout>
+       <InventoryDetails onCancel={setShowPurchase}/>
+        </PopupLayout>
+        }
        
       </Table>
     )

@@ -1,23 +1,40 @@
 'use client'
 import React from "react";
 import { BiEdit } from "react-icons/bi";
-import { GiCancel } from "react-icons/gi";
+import { RxCross1 } from "react-icons/rx";
+import DropdownWrapper from "../dropdownWrapper/dropdownWrapper";
+
+import ProductDetails from "../input/productDetails";
+import Inventory from "../input/inventory";
+import Invoices from "../input/invoices";
+import Purchase from "../input/purchase";
 
 function AddManually({isOpen}) {
   return (
-    <div className=" bg-white rounded-2xl py-2 px-5 flex flex-col gap-4 absolute z-50 w-[50%] h-full top-0 right-0  ">
+    <div className=" bg-gray-100  rounded-2xl py-2 px-5 flex flex-col gap-4 absolute z-50 w-[50%] h-full top-0 right-0  ">
       <div onClick={()=>isOpen(false)}
       className="self-end  w-fit  bg-green-50 rounded-full p-1">
-        <GiCancel size={20} />
+        <RxCross1 size={20} />
       </div>
-      <div className=" flex items-center justify-between">
+      {/* heading */}
+      <div className=" flex items-center justify-between ">
         <p className="text-blue-400 font-semibold text-[22px]">
             Apple
         </p>
         <BiEdit size={22} />
       </div>
+      {/* form content */}
+      <DropdownWrapper>
+       <ProductDetails />
+        <Inventory/>
+       <Purchase />
+       <Invoices />
+      
+    </DropdownWrapper>
 
-      <div className="flex mt-auto w-full gap-4  ">
+
+       {/* buttons */}
+      <div className="flex mt-auto w-full gap-5 mb-5  ">
         <button 
         onClick={()=>isOpen(false)}
         className="border-blue-400 w-full rounded-xl border text-blue-400 bg-blue-100 p-2">Cancel</button>

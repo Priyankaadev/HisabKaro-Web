@@ -88,7 +88,7 @@ import AddSub from "../buttons/addSub";
             <TableHead>Quantity</TableHead>
             <TableHead >MRP</TableHead>
             <TableHead >View</TableHead>
-            <TableHead className='text-right' >Qty.</TableHead>
+            <TableHead className='text-center' >Qty.</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -99,7 +99,7 @@ import AddSub from "../buttons/addSub";
               <TableCell>{stock.Quantity}</TableCell>
               <TableCell>&#8377;{stock.MRP}</TableCell>
               <TableCell ><button className="text-white rounded-lg bg-blue-400 px-5 py-2">View</button></TableCell>
-              <TableCell className=''><AddSub quantity={stock.Qty} /></TableCell>
+              <TableCell className='flex items-center justify-center'><AddSub quantity={stock.Qty} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
