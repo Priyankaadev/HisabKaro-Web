@@ -7,7 +7,7 @@ import { GoStar } from "react-icons/go";
 
 function ProfilePage() {
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div className="flex justify-between items-center ">
         <div className="options flex gap-2 items-center">
           <Options option={"Details"} />

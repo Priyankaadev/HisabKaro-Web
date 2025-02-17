@@ -25,10 +25,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useRouter } from "next/navigation";
 
 
 function Sidebar() {
-  
+  const router = useRouter()
   return (
 
    <div className="w-[20%] mt-3 h-full flex flex-col px-[3%]">
@@ -69,13 +70,25 @@ function Sidebar() {
               <IoStatsChartOutline /> Finance
             </span>
           </AccordionTrigger>
-          <AccordionContent className="px-5 space-y-4">
-            <p className="flex gap-2 items-center"><IoWalletOutline />Ledger</p>
-            <p className="flex gap-2 items-center"><BsReceiptCutoff />Invoice</p>
-            <p className="flex gap-2 items-center"><BsReceipt />Sale Register</p>
-            <p className="flex gap-2 items-center"><PiMoneyWavyBold />Profit-Loss</p>
-            <p className="flex gap-2 items-center"><TbBasketMinus />Udhari</p>
-            <p className="flex gap-2 items-center"><BsGraphUpArrow />Bank Analysis</p>
+          <AccordionContent className="px-5 space-y-4 cursor-pointer">
+            <p className="flex gap-2 items-center"
+            onClick={()=>router.push('/finance/ledger')}
+            ><IoWalletOutline />Ledger</p>
+            <p className="flex gap-2 items-center"
+             onClick={()=>router.push('/finance/invoice')}
+             ><BsReceiptCutoff />Invoice</p>
+            <p className="flex gap-2 items-center"
+             onClick={()=>router.push('/finance/saleRegister')}
+             ><BsReceipt />Sale Register</p>
+            <p className="flex gap-2 items-center" 
+            onClick={()=>router.push('/finance/profitLoss')}
+              ><PiMoneyWavyBold />Profit-Loss</p>
+            <p className="flex gap-2 items-center"
+             onClick={()=>router.push('/finance/udhari')}
+             ><TbBasketMinus />Udhari</p>
+            <p className="flex gap-2 items-center"
+             onClick={()=>router.push('/finance/bank')}
+             ><BsGraphUpArrow />Bank Analysis</p>
           </AccordionContent>
         </AccordionItem>
 
@@ -86,16 +99,34 @@ function Sidebar() {
               <IoBagCheckOutline /> HRMS
             </span>
           </AccordionTrigger>
-          <AccordionContent className="px-5 space-y-4">
-            <p className="flex gap-2 items-center"><IoWalletOutline />Salary</p>
-            <p className="flex gap-2 items-center"><BsReceiptCutoff />Salary Advance</p>
-            <p className="flex gap-2 items-center"><BsReceipt />Overtime</p>
-            <p className="flex gap-2 items-center"><PiMoneyWavyBold />Allowance/Bonus</p>
-            <p className="flex gap-2 items-center"><TbBasketMinus />Deduction</p>
-            <p className="flex gap-2 items-center"><BsGraphUpArrow />Employee Ledger</p>
-            <p className="flex gap-2 items-center"><BsGraphUpArrow />Schedule</p>
-            <p className="flex gap-2 items-center"><BsGraphUpArrow />Request</p>
-            <p className="flex gap-2 items-center"><BsGraphUpArrow />Hiring</p>
+          <AccordionContent className="px-5 space-y-4 cursor-pointer">
+            <p className="flex gap-2 items-center"
+             onClick={()=>router.push('/dashboard/hrms/salary')}
+            ><IoWalletOutline />Salary</p>
+            <p className="flex gap-2 items-center"
+              onClick={()=>router.push('/dashboard/hrms/salaryAdvance')}
+            ><BsReceiptCutoff />Salary Advance</p>
+            <p className="flex gap-2 items-center"
+              onClick={()=>router.push('/dashboard/hrms/overtime')}
+                         ><BsReceipt />Overtime</p>
+            <p className="flex gap-2 items-center"><PiMoneyWavyBold 
+               onClick={()=>router.push('/dashboard/hrms/allowance')}
+                         />Allowance/Bonus</p>
+            <p className="flex gap-2 items-center"><TbBasketMinus 
+                onClick={()=>router.push('/dashboard/hrms/deduction')}
+            />Deduction</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow 
+                onClick={()=>router.push('/dashboard/hrms/employeeLedger')}
+                         />Employee Ledger</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow
+                onClick={()=>router.push('/dashboard/hrms/schedule')}
+            />Schedule</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow
+                         onClick={()=>router.push('/dashboard/hrms/Request')}
+             />Request</p>
+            <p className="flex gap-2 items-center"><BsGraphUpArrow 
+             onClick={()=>router.push('/dashboard/hrms/hiring')}
+             />Hiring</p>
           </AccordionContent>
         </AccordionItem>
 
@@ -106,9 +137,14 @@ function Sidebar() {
               <GiShoppingCart  /> Inventory
             </span>
           </AccordionTrigger>
-          <AccordionContent className="px-5 space-y-4">
-            <p className="flex gap-2 items-center"><AiOutlineFileDone />Inventory</p>
-            <p className="flex gap-2 items-center"><MdOutlineInventory2 />Purchase Register</p>
+          <AccordionContent className="px-5 cursor-pointer space-y-4">
+            <p className="flex gap-2 items-center"
+             onClick={()=>router.push('/inventory')}
+            ><AiOutlineFileDone />Inventory</p>
+            <p className="flex gap-2 items-center"
+             onClick={()=>router.push('/inventory/purchaseRegister')}
+            ><MdOutlineInventory2 
+            />Purchase Register</p>
           </AccordionContent>
         </AccordionItem>
       </Accordion>

@@ -8,8 +8,17 @@ import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { SlCalender } from "react-icons/sl";
 
 function Cashbook() {
-  const [openFilterPayment, setOpenFilterPayment] = useState(false);
-  const [openCalendar, setOpenCalendar] = useState(false);
+  const [popupState, setPopupState] = useState({
+    filterPayment: false,
+    calendar: false,
+  });
+
+  const togglePopup = (popup) => {
+    setPopupState((prevState) => ({
+      filterPayment: popup === "filterPayment" ? !prevState.filterPayment : false,
+      calendar: popup === "calendar" ? !prevState.calendar : false,
+    }));
+  };
   return (
     <div className="w-full flex flex-col gap-3 relative z-1">
       <div className="heading flex gap-4">
@@ -22,23 +31,10 @@ function Cashbook() {
           <p className="text-blue-500">200</p>
         </div>
         <div className=" flex gap-4 basis-[15%] items-center p-2">
-          <SlCalender
-            size={20}
-            onClick={() => {
-              if (openCalendar) {
-                !openCalendar;
-              }
-              setOpenCalendar(!openCalendar);
-            }}
-          />
-          <div
-            className="p-1 shaow-md border bg-blue-400 rounded-lg"
-            onClick={() => {
-              if (openFilterPayment) {
-                !openFilterPayment;
-              }
-              setOpenFilterPayment(!openFilterPayment);
-            }}
+        <SlCalender size={20} onClick={() => togglePopup("calendar")} />
+        <div
+            className="p-1 shadow-md border bg-blue-400 rounded-lg cursor-pointer"
+            onClick={() => togglePopup("filterPayment")}
           >
             <HiOutlineAdjustmentsHorizontal size={18} color="white" />
           </div>
@@ -46,10 +42,9 @@ function Cashbook() {
         </div>
       </div>
       {/* popup filter payment */}
-      {openFilterPayment ? (
-        <FilterPayment isOpen={setOpenFilterPayment} />
-      ) : null}
-      {openCalendar ? <CalendarPopup isOpen={setOpenCalendar} /> : null}
+      {popupState.filterPayment && <FilterPayment isOpen={setPopupState} />}
+      {popupState.calendar && <CalendarPopup isOpen={setPopupState} />}
+      
       <div className="rounded-lg shadow-xl border p-4 w-[98%]  ">
         <div className="px-5 ">
           <CashInvTable h1={"Amount"} h2={"Mode"} h3={"Date"} h4={"From"} />

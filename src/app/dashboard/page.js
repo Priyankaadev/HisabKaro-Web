@@ -21,19 +21,22 @@ function Dashboard() {
       <div className="flex gap-3 ">
         <div className="flex flex-col gap-3 ">
           <SalesGraph />
-          <div className="flex gap-2">
-            <Input2
+          <div className="flex gap-2">             
+               <Input2
+             
               color={"bg-green-400"}
               title={"Cash Book"}
               amount={"1694.69"}
               date={"On 02 Dec, 2023"}
             />
+          
             <Input2
               color={"bg-red-600"}
               title={"Expense "}
               amount={"16"}
               date={"In Dec, 2023"}
             />
+
           </div>
           <div className="flex gap-2">
             <Input4

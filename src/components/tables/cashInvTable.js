@@ -1,4 +1,5 @@
 'use client'
+
 import {
     Table,
     TableBody,
@@ -64,7 +65,7 @@ import PopupLayout from "../popupLayoutWrapper/popupLayout";
     const [showPopup, setShowPopup] = useState(false);
     return (
    <>
-   <Table className='relative' >
+   <Table className='z-1 ' >
       
         <TableHeader >
           <TableRow className='border-none text-gray-500 ' >
@@ -97,7 +98,7 @@ import PopupLayout from "../popupLayoutWrapper/popupLayout";
      {/* Show Popup when "View" is clicked */}
      {showPopup && (
         <PopupLayout onClose={() => setShowPopup(false)}>
-          <InventoryDetails />
+          <InventoryDetails onCancel={setShowPopup} />
         </PopupLayout>
       )}
       </>

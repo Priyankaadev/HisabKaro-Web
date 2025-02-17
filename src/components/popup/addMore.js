@@ -20,7 +20,7 @@ function AddMore({assetOpen}) {
         type='text'
         name='asset'
         placeholder='Ex. Laptop, Mobile, etc'
-        className='p-2 w-full border rounded-xl'
+        className='p-2 w-full border rounded-xl focus:outline focus:ring-0'
         />
         <button className='bg-blue-400 text-white py-2 px-4 w-fit rounded-xl '>
             Add More</button>
